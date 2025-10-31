@@ -1,0 +1,51 @@
+'''
+ref:
+https://www.theconstruct.ai/ros2-qa-215-how-to-use-ros2-python-launch-files/
+'''
+from setuptools import find_packages, setup
+import os
+from glob import glob
+
+
+
+
+
+package_name = 'player_bridge'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/environment', ['environment/99_player_lib.sh']),
+        (os.path.join('share', package_name, 'client_lib'), glob('client_lib/*')),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+    ],
+    
+    
+    
+    install_requires=['setuptools'],
+    zip_safe=True,
+    author='leonli',
+    author_email='leonli@msi.com',
+    maintainer='leonli',
+    maintainer_email='leonli@msi.com',
+    keywords=['ROS'],
+    classifiers=[
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
+        'Topic :: Software Development',
+    ],
+    description='ROS2 bridge for Player/Stage robot API',
+    license='Apache License, Version 2.0',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'player_bridge = player_bridge.player_bridge_node:main'
+        ],
+    },
+)

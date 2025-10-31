@@ -1,0 +1,10 @@
+player_bridge:                         
+  ros__parameters:
+    player_host: '192.168.0.2'                 
+    odom_frame: 'odom'
+    base_frame: 'base_link'
+
+    core_id: [-1]                                     #use which cpu core use [0,1]. not define will be [-1]
+    priority: -1                                    #-1:default 1 to 127, where 1 is the least favored priority, and 127 the most favored
+    policy: 0                                       #default:SCHED_OTHER:0 SCHED_FIFO:1 SCHED_RR:2
+
