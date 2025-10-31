@@ -1,5 +1,5 @@
 # Overview
-This package provides a msi core library.
+This is a program used to bridge MSI AMR to a ROS2 node.
 
 - Feature
 
