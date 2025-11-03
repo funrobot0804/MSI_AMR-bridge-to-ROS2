@@ -3053,6 +3053,9 @@ class LaserProxy(ClientProxy):
     def GetBearing(self, aIndex):
         return _playercpp.LaserProxy_GetBearing(self, aIndex)
 
+    def GetIntensityVec(self):
+        return _playercpp.LaserProxy_GetIntensityVec(self)
+
     def GetIntensity(self, *args):
         return _playercpp.LaserProxy_GetIntensity(self, *args)
 
